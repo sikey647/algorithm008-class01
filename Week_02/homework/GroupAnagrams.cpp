@@ -5,19 +5,19 @@
  */
 
 // @lc code=start
-#include <vector>
-#include <unordered_map>
 #include <algorithm>
+#include <unordered_map>
+#include <vector>
 using namespace std;
 
 // sort + hash
 class Solution {
-public:
-    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+   public:
+    vector<vector<string>> groupAnagrams(vector<string> &strs) {
         vector<vector<string>> res;
         unordered_map<string, vector<string>> vecMap;
         for (auto &str : strs) {
-            auto s = str; 
+            auto s = str;
             sort(s.begin(), s.end());
             auto itr = vecMap.find(s);
             if (itr != vecMap.end())
@@ -25,10 +25,8 @@ public:
             else
                 vecMap[s] = vector<string>{str};
         }
-        for (auto &elem : vecMap)
-            res.push_back(elem.second);
+        for (auto &elem : vecMap) res.push_back(elem.second);
         return res;
     }
 };
 // @lc code=end
-
