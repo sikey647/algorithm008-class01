@@ -1,9 +1,10 @@
+#include <algorithm>
 #include <vector>
 using namespace std;
 
 // 反转
 class Solution {
-public:
+   public:
     void rotate(vector<int>& nums, int k) {
         k %= nums.size();
         reverse(nums.begin(), nums.end());
@@ -11,6 +12,3 @@ public:
         reverse(nums.begin() + k, nums.end());
     }
 };
-
-
-
